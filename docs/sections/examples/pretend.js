@@ -39,6 +39,7 @@ process.browser &&
     })
 
     pretender.get('/*all', pretender.passthrough)
+    pretender.post('/*all', pretender.passthrough)
   })
 
 const Section = ({ seed }) => (
@@ -91,8 +92,8 @@ const Section = ({ seed }) => (
     const pretender = new Pretender()
 
     const data = Fiona().object({
-      users: Fiona.Array(10, fiona => {
-        const index = fiona.info().initseed.match(/root\[(\d+)\]/m)[1]
+      users: Fiona.Array(10, seeded => {
+        const index = seeded.info().path.slice(-1)[0]
         return modelMock(index)
       })
     })
@@ -114,9 +115,8 @@ const Section = ({ seed }) => (
         }).then(r => r.json()).then(console.log)
       `}
       output={Fiona().json({
-        // xxx: Fiona.Array(5, fiona => console.log(fiona.info()))
-        posts: Fiona.Array(5, fiona =>
-          Fiona(fiona.info().path.slice(-1)[0]).object({
+        posts: Fiona.Array(5, seeded =>
+          Fiona(seeded.info().path.slice(-1)[0]).object({
             fullname: seeded => seeded.fullname(),
             color: seeded => seeded.oneOf(['red', 'yellow', 'blue']),
             age: seeded => seeded.number({ max: 100 })

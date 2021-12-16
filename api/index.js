@@ -1,3 +1,7 @@
+const Fiona = require("fiona")
+
+const seeded = Fiona(123);
+
 const recurser = (condition,handler)=>{
     const nodeHandler = (node,root)=>{
         if (root === undefined) {
@@ -25,8 +29,6 @@ const recurser = (condition,handler)=>{
     return nodeHandler
 }
 
-//     const seeded = Fiona(123);
-
 const json = JSON.stringify({
     name: {
         fiona: 'fullname'
@@ -40,14 +42,15 @@ const json = JSON.stringify({
         fiona: ['number', {
             max: 100
         }]
-    }]
+    }],
+    list: { fiona: ["array", 5, { fiona: ["oneOf", [{ fiona: "fullname" }, { fiona: "gibberish" }]] }] }
 })
 
 const transformer = recurser(node=>node.fiona, node=>{
     if (node.fiona.constructor === Array) {
-        return seeded[node.fiona[0]](...node.fiona.slice(1))
+        return seeded => seeded[node.fiona[0]](...node.fiona.slice(1).map(transformer))
     } else {
-        return seeded[node.fiona]()
+        return seeded => seeded[node.fiona]()
     }
 
 })
@@ -63,4 +66,10 @@ Fiona.register(['fromJSON', (seeded, json) => {
     return transformer(json)
 }])
 
-console.log(seeded.fromJSON(json))
+console.log(Fiona(1).object(seeded.fromJSON(json)))
+console.log(Fiona(1).object({
+    name: Fiona.Fullname,
+    age: Fiona.Number({ max: 100 }),
+    code: [1, /[10]{8} cyborgs/, Fiona.Number({ max: 100 })],
+    list: Fiona.Array(5, Fiona.Fullname)
+}))
