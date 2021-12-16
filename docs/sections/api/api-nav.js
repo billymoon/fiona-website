@@ -7,6 +7,7 @@ const apis = [
   'Fiona.Date',
 
   'Fiona.Array',
+  'Fiona.Unique',
   'Fiona.String',
   'Fiona.Regex',
   'Fiona.Object',
@@ -16,6 +17,7 @@ const apis = [
   'Fiona.Choose',
   'Fiona.OneOf',
 
+  'Fiona.Gibberish',
   'Fiona.Lorem',
   'Fiona.Paragraph',
   'Fiona.Sentence',

@@ -32,7 +32,7 @@ const MainContent = withNav(
           <Nav closed={closed} />
         </Article>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
         <link href="https://fonts.googleapis.com/css2?family=Andika&amp;family=Raleway&amp;family=Cousine" rel="stylesheet" />
         <style global jsx>{`
       html {
@@ -125,7 +125,7 @@ const MainLayout = ({ router, seed, children }) => (
         href="https://cdn.jsdelivr.net/npm/highlight.js@9.13.1/styles/mono-blue.css"
       />
       {/* TODO: re-enable error tracking if can disable locally
-      <script src='https://cdn.ravenjs.com/3.26.2/raven.min.js' crossorigin='anonymous'></script>
+      <script src='https://cdn.ravenjs.com/3.26.2/raven.min.js' crossOrigin='anonymous'></script>
       <script>Raven.config('https://cbe5f0dcbb0b4d488ca750f1b7f7ac11@sentry.io/1226793').install()</script>
       */}
     </Head>

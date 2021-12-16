@@ -28,6 +28,7 @@ import ApiFnDate from '../../docs/api/date/date.docs'
 import ApiFnImg from '../../docs/api/img/img.docs'
 import ApiFnDuplicable from '../../docs/api/duplicable/duplicable.docs'
 import ApiFnJson from '../../docs/api/core/primitives/json/json.docs'
+import ApiFnGibberish from '../../docs/api/gibberish/gibberish.docs'
 import ApiFnLorem from '../../docs/api/lorem/lorem.docs'
 import ApiFnOneof from '../../docs/api/choose/one-of.docs'
 import ApiFnParagraph from '../../docs/api/lorem/paragraph.docs'
@@ -51,6 +52,7 @@ const Page = () => (
           <ApiFnImg />
           <ApiFnDuplicable />
           <ApiFnJson />
+          <ApiFnGibberish />
           <ApiFnLorem />
           <ApiFnOneof />
           <ApiFnParagraph />
