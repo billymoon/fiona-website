@@ -38,7 +38,6 @@ const Page = () => (
 )
 
 Page.getInitialProps = (...atgs) => {
-  console.log(atgs)
   return {}
 }
 

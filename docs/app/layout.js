@@ -31,9 +31,9 @@ const MainContent = withNav(
         <Article style={{ textAlign: 'center' }}>
           <Nav closed={closed} />
         </Article>
-        <style global jsx>{`
-          @import url('https://fonts.googleapis.com/css?family=Raleway|Andika|Cousine');
-        `}</style>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Andika&amp;family=Raleway&amp;family=Cousine" rel="stylesheet" />
         <style global jsx>{`
       html {
         background-color: ${theme.clr.accent};
