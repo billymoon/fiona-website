@@ -21,6 +21,7 @@ import ApiFnString from '../../docs/api/core/primitives/string/string.docs'
 import ApiFnTitle from '../../docs/api/name/title.docs'
 import ApiFnDistribution from '../../docs/api/core/distribution/distribution.docs'
 import ApiFnArray from '../../docs/api/core/primitives/array/array.docs'
+import ApiFnUnique from '../../docs/api/unique/unique.docs'
 import ApiFnBool from '../../docs/api/bool/bool.docs'
 import ApiFnChoose from '../../docs/api/choose/choose.docs'
 import ApiFnDate from '../../docs/api/date/date.docs'
@@ -43,6 +44,7 @@ const Page = () => (
         <ApiNav />
         <section>
           <ApiFnArray />
+          <ApiFnUnique />
           <ApiFnBool />
           <ApiFnChoose />
           <ApiFnDate />

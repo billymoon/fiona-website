@@ -1,0 +1,13 @@
+version: "3"
+services:
+  zerotier:
+    build: .
+    # volumes:
+    #   - ${DATA_DIR}/zerotier:/var/lib/zerotier-one
+    command: >
+            sh -c "ls -ltrah && find .next && yarn start"
+    # network_mode: service:private
+    # depends_on:
+    #   - private
+    ports:
+      - 1239:3000

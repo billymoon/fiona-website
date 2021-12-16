@@ -32,7 +32,7 @@ const MainContent = withNav(
           <Nav closed={closed} />
         </Article>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
         <link href="https://fonts.googleapis.com/css2?family=Andika&amp;family=Raleway&amp;family=Cousine" rel="stylesheet" />
         <style global jsx>{`
       html {
