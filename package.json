@@ -1,16 +1,12 @@
 {
   "name": "fiona-website",
-  "version": "3.4.2",
+  "version": "4.0.0-alpha.8",
   "description": "tiny yet powerful pseudo random data generator",
   "repository": "billymoon/fiona",
   "scripts": {
-    "start": "node scripts/dev",
-    "dev": "node scripts/dev",
-    "coverage": "deno test src --coverage=coverage && deno coverage coverage --lcov > coverage/coverage.lcov && genhtml -o coverage/html coverage/coverage.lcov",
-    "test": "deno test src",
-    "build": "node scripts/build",
-    "fix": "node scripts/fix",
-    "git-pre-commit": "node scripts/precommit"
+    "start": "next start",
+    "dev": "next dev",
+    "build": "next build"
   },
   "author": "Billy Moon",
   "license": "ISC",

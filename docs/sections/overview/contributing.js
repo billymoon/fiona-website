@@ -21,11 +21,7 @@ const Section = ({ seed }) => (
       <Link href="/static/reports/coverage/index.html">
         <a>well tested</a>
       </Link>{' '}
-      and{' '}
-      <Link href="/static/reports/size/main.html">
-        <a>small</a>
-      </Link>{' '}
-      (full library is ~8KB core is ~3KB gzipped).
+      and small (~10KB gzipped).
     </p>
 
     <p>
@@ -51,17 +47,9 @@ const Section = ({ seed }) => (
 
     <ul>
       <li>
-        <NPM name="ava" /> for testing
-      </li>
-      <li>
-        <NPM name="webpack" /> and <NPM name="babel-cli" /> for bundling
-        distributable
-      </li>
-      <li>
-        <NPM name="@zeit/git-hooks" /> for development lifecycle scripting
-      </li>
-      <li>
-        <NPM name="prettier" /> for linting
+        <Link href="https://deno.land">
+          <a>deno</a>
+        </Link> for developing, linting, testing and bundling
       </li>
       <li>
         <NPM name="react" /> and <NPM name="next" /> for documentation website
@@ -69,7 +57,7 @@ const Section = ({ seed }) => (
     </ul>
 
     <p>
-      Updating or creating a pull request will trigger a deployment using zeit's
+      Updating or creating a pull request will trigger a deployment using vercel's
       now service, so you can preview the suggested changes in a production like
       environment.
     </p>
