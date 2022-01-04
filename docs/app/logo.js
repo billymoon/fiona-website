@@ -1,53 +1,93 @@
-import { Fiona, config, consume, withBlink } from '.'
+import { config, consume, Fiona, withBlink } from ".";
 
-const pos = index => ({
+const pos = (index) => ({
   x: (index % 11) * 40 + 10,
-  y: Math.floor(index / 11) * 40 + 10
-})
+  y: Math.floor(index / 11) * 40 + 10,
+});
 
-const getLines = seeded => {
-  const out = []
+const getLines = (seeded) => {
+  const out = [];
 
   for (let i = 0; i < 33; i++) {
     if ((i + 1) % 11 && seeded.bool()) {
-      out.push([i, i + 1])
+      out.push([i, i + 1]);
     }
 
     if (i < 22 && seeded.bool()) {
-      out.push([i, i + 11])
+      out.push([i, i + 11]);
     }
   }
 
-  return out
-}
+  return out;
+};
 
-const getDots = seeded => {
-  const out = []
+const getDots = (seeded) => {
+  const out = [];
 
   for (let i = 0; i < 33; i++) {
-    out.push(seeded.bool({ chance: 0.2 }))
+    out.push(seeded.bool({ chance: 0.2 }));
   }
 
-  return out
-}
+  return out;
+};
 
-Fiona.register(['getLines', getLines], ['getDots', getDots])
+Fiona.register(["getLines", getLines], ["getDots", getDots]);
 
 // prettier-ignore
 const fionaLines = [
-  [1, 2], [1, 23], [12, 13],
+  [1, 2],
+  [1, 23],
+  [12, 13],
   [3, 25],
-  [4, 26], [5, 27], [4, 5], [26, 27],
-  [6, 28], [6, 29], [7, 29],
-  [8, 30], [8, 9], [9, 31], [19, 20]
-]
+  [4, 26],
+  [5, 27],
+  [4, 5],
+  [26, 27],
+  [6, 28],
+  [6, 29],
+  [7, 29],
+  [8, 30],
+  [8, 9],
+  [9, 31],
+  [19, 20],
+];
 
 // prettier-ignore
 const fionaDots = [
-  0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 0,
-  0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0,
-  0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0
-]
+  0,
+  0,
+  1,
+  1,
+  1,
+  0,
+  0,
+  1,
+  0,
+  0,
+  0,
+  0,
+  0,
+  1,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  1,
+  0,
+  1,
+  0,
+  0,
+  1,
+  0,
+  1,
+  1,
+  0,
+];
 
 // TODO: simpify and tidy this section, perhaps this whole logo file
 const Logo = ({
@@ -56,54 +96,55 @@ const Logo = ({
   blinkInterval,
   theme,
   clickSeed,
-  toggleTheme
+  toggleTheme,
 }) => (
   <div className="root">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0, 0, 420, 100">
       <g>
-        {(seed === config.magicNumber
-          ? fionaLines
-          : Fiona(seed).getLines()
-        ).map(([p1, p2], index) => (
-          <line
-            key={index}
-            x1={pos(p1).x}
-            y1={pos(p1).y}
-            x2={pos(p2).x}
-            y2={pos(p2).y}
-            strokeWidth="2"
-          />
-        ))}
+        {(seed === config.magicNumber ? fionaLines : Fiona(seed).getLines())
+          .map(([p1, p2], index) => (
+            <line
+              key={index}
+              x1={pos(p1).x}
+              y1={pos(p1).y}
+              x2={pos(p2).x}
+              y2={pos(p2).y}
+              strokeWidth="2"
+            />
+          ))}
       </g>
       <g>
-        {(seed === config.magicNumber ? fionaDots : Fiona(seed).getDots()).map(
-          (filled, index) => (
-            <circle
-              key={index}
-              cx={pos(index).x}
-              cy={pos(index).y}
-              r={8}
-              strokeWidth={2}
-              className={[
-                !blinkInterval &&
-                (index === 24 ? config.magicNumber : index) === seed
-                  ? 'filled'
-                  : '',
-                ((index === 24 ? config.magicNumber : index) === seed &&
-                  (blink ? 'blink selected' : 'selected')) ||
-                  ''
-              ].join(' ')}
-              onClick={() => {
-                // TODO: move this into clickSeed action
-                toggleTheme(index)
-                return clickSeed(index)
-              }}
-            />
-          )
-        )}
+        {(seed === config.magicNumber
+          ? fionaDots
+          : Fiona(seed).getDots()).map(
+            (filled, index) => (
+              <circle
+                key={index}
+                cx={pos(index).x}
+                cy={pos(index).y}
+                r={8}
+                strokeWidth={2}
+                className={[
+                  !blinkInterval &&
+                    (index === 24 ? config.magicNumber : index) === seed
+                    ? "filled"
+                    : "",
+                  ((index === 24 ? config.magicNumber : index) === seed &&
+                    (blink ? "blink selected" : "selected")) ||
+                  "",
+                ].join(" ")}
+                onClick={() => {
+                  // TODO: move this into clickSeed action
+                  toggleTheme(index);
+                  return clickSeed(index);
+                }}
+              />
+            ),
+          )}
       </g>
     </svg>
-    <style jsx>{`
+    <style jsx>
+      {`
       .root {
         margin: 20px auto 0px auto;
         max-width: 400px;
@@ -146,8 +187,9 @@ const Logo = ({
           margin: 60px auto 20px auto;
         }
       }
-    `}</style>
+    `}
+    </style>
   </div>
-)
+);
 
-export default withBlink(consume(Logo))
+export default withBlink(consume(Logo));

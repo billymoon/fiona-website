@@ -1,5 +1,5 @@
-import Link from 'next/link'
-import { Fiona, Layout, Article, Shelf, withTheme } from '../../app'
+import Link from "next/link";
+import { Article, Fiona, Layout, Shelf, withTheme } from "../../app";
 
 const Showcase = ({ children, title, href, img }) => (
   <div>
@@ -15,7 +15,8 @@ const Showcase = ({ children, title, href, img }) => (
     <Link href={href}>
       <a>{title} demo and code samples</a>
     </Link>
-    <style jsx>{`
+    <style jsx>
+      {`
       img {
         width: 100%;
       }
@@ -25,9 +26,10 @@ const Showcase = ({ children, title, href, img }) => (
         box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.12);
         margin-bottom: 20px;
       }
-    `}</style>
+    `}
+    </style>
   </div>
-)
+);
 
 export default withTheme(({ seed, theme }) => (
   <section>
@@ -92,8 +94,8 @@ export default withTheme(({ seed, theme }) => (
             bg: theme.clr.secondaryAccent,
             colors: [
               { start: theme.clr.primary, end: theme.clr.accent },
-              { start: theme.clr.secondary, end: theme.clr.secondaryAccent }
-            ]
+              { start: theme.clr.secondary, end: theme.clr.secondaryAccent },
+            ],
           })}
         >
           <p>
@@ -110,4 +112,4 @@ export default withTheme(({ seed, theme }) => (
       }
     />
   </section>
-))
+));

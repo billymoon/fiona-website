@@ -1,5 +1,5 @@
-import Link from 'next/link'
-import { Fiona, consume, Sample } from '../../app'
+import Link from "next/link";
+import { consume, Fiona, Sample } from "../../app";
 
 const Section = ({ seed }) => (
   <section>
@@ -15,7 +15,9 @@ const Section = ({ seed }) => (
 
     <p>or include in webpage from cdn</p>
 
-    <Sample lang="html">{`<script src='https://cdn.jsdelivr.net/npm/fiona'></script>`}</Sample>
+    <Sample lang="html">
+      {`<script src='https://cdn.jsdelivr.net/npm/fiona'></script>`}
+    </Sample>
 
     <p>
       <i>
@@ -52,14 +54,16 @@ const Section = ({ seed }) => (
       age: Fiona.Number({ max: 100 })
     })
     `}
-      output={`\n${JSON.stringify(
-        Fiona(seed).object({
-          milesFromHome: Fiona.Number(),
-          age: Fiona.Number({ max: 100 })
-        }),
-        null,
-        2
-      )}`}
+      output={`\n${
+        JSON.stringify(
+          Fiona(seed).object({
+            milesFromHome: Fiona.Number(),
+            age: Fiona.Number({ max: 100 }),
+          }),
+          null,
+          2,
+        )
+      }`}
     />
 
     <p>
@@ -77,20 +81,22 @@ const Section = ({ seed }) => (
       age: Fiona.Number({ max: 100 })
     })
     `}
-      output={`\n${JSON.stringify(
-        Fiona(seed).object({
-          milesFromHome: Fiona.Number(),
-          name: Fiona.Fullname,
-          age: Fiona.Number({ max: 100 })
-        }),
-        null,
-        2
-      )}`}
+      output={`\n${
+        JSON.stringify(
+          Fiona(seed).object({
+            milesFromHome: Fiona.Number(),
+            name: Fiona.Fullname,
+            age: Fiona.Number({ max: 100 }),
+          }),
+          null,
+          2,
+        )
+      }`}
     />
 
     <p>
       There are lots of methods to help generate different types of data, you
-      can read more about them in the{' '}
+      can read more about them in the{" "}
       <Link href="/api">
         <a>api section</a>
       </Link>
@@ -101,10 +107,12 @@ const Section = ({ seed }) => (
       terse and powerful syntax to describe any data structure.
     </p>
 
-    <Sample>{`
+    <Sample>
+      {`
     // use a regex pattern to generate strings that match
     const ibanPattern = /[A-Z]{2}\\d{2}( \\d{4}){4,5} \\d{1,3}/
-    `}</Sample>
+    `}
+    </Sample>
 
     <Sample
       input={`
@@ -120,19 +128,21 @@ const Section = ({ seed }) => (
       ])
     })
     `}
-      output={`\n${JSON.stringify(
-        Fiona(seed).object({
-          milesFromHome: Fiona.Number,
-          age: Fiona.Number({ max: 100 }),
-          name: Fiona.Fullname,
-          iban: /[A-Z]{2}\d{2}( \d{4}){4,5} \d{1,3}/,
-          colour: Fiona.OneOf(['red', 'yellow', 'blue'])
-        }),
-        null,
-        2
-      )}`}
+      output={`\n${
+        JSON.stringify(
+          Fiona(seed).object({
+            milesFromHome: Fiona.Number,
+            age: Fiona.Number({ max: 100 }),
+            name: Fiona.Fullname,
+            iban: /[A-Z]{2}\d{2}( \d{4}){4,5} \d{1,3}/,
+            colour: Fiona.OneOf(["red", "yellow", "blue"]),
+          }),
+          null,
+          2,
+        )
+      }`}
     />
   </section>
-)
+);
 
-export default consume(Section)
+export default consume(Section);

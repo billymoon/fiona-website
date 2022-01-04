@@ -1,5 +1,5 @@
-import Link from 'next/link'
-import { Fiona, consume, Shelf, Row, Col } from '../../app'
+import Link from "next/link";
+import { Col, consume, Fiona, Row, Shelf } from "../../app";
 
 const Section = ({ seed }) => (
   <section>
@@ -48,12 +48,14 @@ const Section = ({ seed }) => (
         </p>
       </Col>
     </Row>
-    <style jsx>{`
+    <style jsx>
+      {`
       img {
         width: 100%;
       }
-    `}</style>
+    `}
+    </style>
   </section>
-)
+);
 
-export default consume(Section)
+export default consume(Section);

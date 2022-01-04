@@ -1,17 +1,17 @@
-import { configurableLayoutComponents, config } from '.'
+import { config, configurableLayoutComponents } from ".";
 
 // TODO: fix configurable grid
-const componentConfigurator = Component => {
+const componentConfigurator = (Component) => {
   const ComponentProxy = ({ theme: { grid }, effects, ...props }) => (
     <Component config={Object.assign({}, config.theme.grid, grid)} {...props} />
-  )
-  return ComponentProxy
-}
+  );
+  return ComponentProxy;
+};
 
 export const {
   Container,
   Row,
   Col,
   Article,
-  Shelf
-} = configurableLayoutComponents(componentConfigurator)
+  Shelf,
+} = configurableLayoutComponents(componentConfigurator);

@@ -1,8 +1,8 @@
-import Link from 'next/link'
-import { Layout, Article, Shelf } from '../../docs/app'
-import { provide } from '../../docs/app/state'
+import Link from "next/link";
+import { Article, Layout, Shelf } from "../../docs/app";
+import { provide } from "../../docs/app/state";
 
-import { ExamplesIntro, ExamplesDashboard } from '../../docs/sections'
+import { ExamplesDashboard, ExamplesIntro } from "../../docs/sections";
 
 const Page = () => (
   <Layout>
@@ -11,6 +11,6 @@ const Page = () => (
     </Article>
     <ExamplesDashboard />
   </Layout>
-)
+);
 
-export default provide(Page)
+export default provide(Page);

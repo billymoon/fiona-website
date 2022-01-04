@@ -24,11 +24,11 @@ const defaultNamaData = () => {
 
 const Section = ({ seed }) => (
   <ApiSection
-    heading={(
+    heading={
       <span>
         <small>Fiona.</small>namedata
       </span>
-    )}
+    }
   >
     <p>
       The data used to generate names and salutations is exposed as{" "}

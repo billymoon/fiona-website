@@ -1,7 +1,7 @@
-import { Layout, Article } from '../../../docs/app'
-import { provide } from '../../../docs/app/state'
+import { Article, Layout } from "../../../docs/app";
+import { provide } from "../../../docs/app/state";
 
-import { ExamplesPretend, ExamplesExpressMock } from '../../../docs/sections'
+import { ExamplesExpressMock, ExamplesPretend } from "../../../docs/sections";
 
 const Page = () => (
   <Layout>
@@ -15,6 +15,6 @@ const Page = () => (
       <ExamplesExpressMock />
     </Article>
   </Layout>
-)
+);
 
-export default provide(Page)
+export default provide(Page);

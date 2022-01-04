@@ -1,9 +1,9 @@
-import Head from 'next/head'
-import { withRouter } from 'next/router'
-import { Ribbon } from '../../components'
+import Head from "next/head";
+import { withRouter } from "next/router";
+import { Ribbon } from "../../components";
 
-import { Theme, Shelf, Article, withTheme, withNav, Sample } from '../app'
-import { Logo, Nav, Fiona, injectState, config, consume } from './'
+import { Article, Sample, Shelf, Theme, withNav, withTheme } from "../app";
+import { config, consume, Fiona, injectState, Logo, Nav } from "./";
 
 const MainContent = withNav(
   withTheme(
@@ -13,13 +13,16 @@ const MainContent = withNav(
           href="https://github.com/billymoon/Fiona"
           color={theme.clr.primary}
         />
-        <Article style={{ textAlign: 'center' }}>
+        <Article style={{ textAlign: "center" }}>
           <Logo />
           <Sample
-            special={['mobile-no-bg']}
-          >{`const seeded = Fiona(${seed})`}</Sample>
+            special={["mobile-no-bg"]}
+          >
+            {`const seeded = Fiona(${seed})`}
+          </Sample>
         </Article>
-        {/*
+        {
+          /*
         <Article style={{ textAlign: "center" }}>
           <h1>
             {Fiona(seed).regex(
@@ -27,14 +30,23 @@ const MainContent = withNav(
             )}
           </h1>
         </Article>
-      */}
-        <Article style={{ textAlign: 'center' }}>
+      */
+        }
+        <Article style={{ textAlign: "center" }}>
           <Nav closed={closed} />
         </Article>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
-        <link href="https://fonts.googleapis.com/css2?family=Andika&amp;family=Raleway&amp;family=Cousine" rel="stylesheet" />
-        <style global jsx>{`
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="true"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Andika&amp;family=Raleway&amp;family=Cousine"
+          rel="stylesheet"
+        />
+        <style global jsx>
+          {`
       html {
         background-color: ${theme.clr.accent};
       }
@@ -94,12 +106,13 @@ const MainContent = withNav(
       @media screen and (min-width: 768px) {
         h1 { font-size: 40px; margin-top: 20px; margin-bottom: 40px; }
       }
-    `}</style>
+    `}
+        </style>
         {children}
       </section>
-    ))
-  )
-)
+    )),
+  ),
+);
 
 // TODO: simpify and tidy this section, perhaps this whole layout file
 // TODO: re-implement dynamic theme switcher
@@ -124,13 +137,15 @@ const MainLayout = ({ router, seed, children }) => (
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/highlight.js@9.13.1/styles/mono-blue.css"
       />
-      {/* TODO: re-enable error tracking if can disable locally
+      {
+        /* TODO: re-enable error tracking if can disable locally
       <script src='https://cdn.ravenjs.com/3.26.2/raven.min.js' crossOrigin='anonymous'></script>
       <script>Raven.config('https://cbe5f0dcbb0b4d488ca750f1b7f7ac11@sentry.io/1226793').install()</script>
-      */}
+      */
+      }
     </Head>
     <MainContent seed={seed}>{children}</MainContent>
   </div>
-)
+);
 
-export default withRouter(consume(MainLayout))
+export default withRouter(consume(MainLayout));

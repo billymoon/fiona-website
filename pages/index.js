@@ -1,15 +1,15 @@
-import { Layout, Article } from '../docs/app'
-import { provide } from '../docs/app/state'
+import { Article, Layout } from "../docs/app";
+import { provide } from "../docs/app/state";
 
 import {
+  OverviewContributing,
+  OverviewDistribution,
   OverviewDynamicOverview,
+  OverviewExtending,
   OverviewHowFionaWorks,
   OverviewQuickStart,
   OverviewSeededPRNG,
-  OverviewDistribution,
-  OverviewExtending,
-  OverviewContributing
-} from '../docs/sections'
+} from "../docs/sections";
 
 const Page = () => (
   <Layout>
@@ -35,10 +35,10 @@ const Page = () => (
       <OverviewContributing />
     </Article>
   </Layout>
-)
+);
 
 Page.getInitialProps = (...atgs) => {
-  return {}
-}
+  return {};
+};
 
-export default provide(Page)
+export default provide(Page);

@@ -2,11 +2,11 @@ import { ApiSection, consume, Fiona, Sample } from "../../../../docs/app";
 
 const Section = ({ seed }) => (
   <ApiSection
-    heading={(
+    heading={
       <span>
         <small>Fiona.</small>Distribution
       </span>
-    )}
+    }
   >
     <p>
       A utility to manipulate the result of seeded random nambers, allowing

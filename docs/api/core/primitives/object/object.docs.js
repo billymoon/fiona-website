@@ -3,12 +3,12 @@ import { ApiSection, consume, Fiona, Sample } from "../../../../../docs/app";
 const Section = ({ seed }) => (
   <span>
     <ApiSection
-      heading={(
+      heading={
         <span>
           <small>Fiona.</small>
           Object
         </span>
-      )}
+      }
     >
       <p>
         A method that recurses a passed data structure to resolve it's values.

@@ -1,65 +1,66 @@
-import { withApi, withThemeState } from '../../app/state'
+import { withApi, withThemeState } from "../../app/state";
 
 const apis = [
-  'Fiona.Random',
-  'Fiona.Number',
-  'Fiona.Bool',
-  'Fiona.Date',
+  "Fiona.Random",
+  "Fiona.Number",
+  "Fiona.Bool",
+  "Fiona.Date",
 
-  'Fiona.Array',
-  'Fiona.Unique',
-  'Fiona.String',
-  'Fiona.Regex',
-  'Fiona.Object',
-  'Fiona.Json',
+  "Fiona.Array",
+  "Fiona.Unique",
+  "Fiona.String",
+  "Fiona.Regex",
+  "Fiona.Object",
+  "Fiona.Json",
 
-  'Fiona.Shuffle',
-  'Fiona.Choose',
-  'Fiona.OneOf',
+  "Fiona.Shuffle",
+  "Fiona.Choose",
+  "Fiona.OneOf",
 
-  'Fiona.Gibberish',
-  'Fiona.Lorem',
-  'Fiona.Paragraph',
-  'Fiona.Sentence',
-  'Fiona.Word',
+  "Fiona.Gibberish",
+  "Fiona.Lorem",
+  "Fiona.Paragraph",
+  "Fiona.Sentence",
+  "Fiona.Word",
 
-  'Fiona.Gender',
-  'Fiona.Title',
-  'Fiona.Firstname',
-  'Fiona.Surname',
-  'Fiona.Fullname',
-  'Fiona.namedata',
+  "Fiona.Gender",
+  "Fiona.Title",
+  "Fiona.Firstname",
+  "Fiona.Surname",
+  "Fiona.Fullname",
+  "Fiona.namedata",
 
-  'Fiona.Img',
+  "Fiona.Img",
 
-  'Fiona.Info',
-  'Fiona.Seed',
-  'Fiona.Index',
-  'Fiona.Path',
-  'Fiona.Duplicable',
-  'Fiona.Distribution',
-  'Fiona.register'
-]
+  "Fiona.Info",
+  "Fiona.Seed",
+  "Fiona.Index",
+  "Fiona.Path",
+  "Fiona.Duplicable",
+  "Fiona.Distribution",
+  "Fiona.register",
+];
 
 const ApiSearch = ({ setApiFilter, theme, ...props }) => (
   <div>
     <ul>
-      {apis.map(api => (
+      {apis.map((api) => (
         <li key={api}>
           <a
             href={`#${api}`}
-            onClick={evt => {
-              evt.preventDefault()
-              setApiFilter(api)
+            onClick={(evt) => {
+              evt.preventDefault();
+              setApiFilter(api);
             }}
           >
-            {api.replace(/^Fiona\./, '')}
+            {api.replace(/^Fiona\./, "")}
           </a>
         </li>
       ))}
     </ul>
     <div className="clearfix" />
-    <style jsx>{`
+    <style jsx>
+      {`
       a {
         font-size: 14px;
       }
@@ -78,8 +79,9 @@ const ApiSearch = ({ setApiFilter, theme, ...props }) => (
       .clearfix {
         clear: both;
       }
-    `}</style>
+    `}
+    </style>
   </div>
-)
+);
 
-export default withApi(withThemeState(ApiSearch))
+export default withApi(withThemeState(ApiSearch));

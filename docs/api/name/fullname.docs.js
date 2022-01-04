@@ -2,11 +2,11 @@ import { ApiSection, consume, Fiona, Sample } from "../../../docs/app";
 
 const Section = ({ seed }) => (
   <ApiSection
-    heading={(
+    heading={
       <span>
         <small>Fiona.</small>Fullname
       </span>
-    )}
+    }
   >
     <p>
       A seeded utility to return a full name, optionally taking a gender to

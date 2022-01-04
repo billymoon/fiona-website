@@ -2,11 +2,11 @@ import { ApiSection, consume, Fiona, Sample } from "../../../../../docs/app";
 
 const Section = ({ seed }) => (
   <ApiSection
-    heading={(
+    heading={
       <span>
         <small>Fiona.</small>Array
       </span>
-    )}
+    }
   >
     <p>
       A seeded array generation utility, which takes <code>qty</code>{" "}

@@ -2,11 +2,11 @@ import { ApiSection, consume, Fiona, Sample } from "../../../docs/app";
 
 const Section = ({ seed }) => (
   <ApiSection
-    heading={(
+    heading={
       <span>
         <small>Fiona.</small>Path
       </span>
-    )}
+    }
   >
     <p>
       Method that returns current path within structure of seeded instance.
@@ -17,7 +17,7 @@ const Section = ({ seed }) => (
     Fiona(${seed}).array(3, seeded => seeded.path())
     `}
       output={`
-    ${JSON.stringify(Fiona(seed).array(3, seeded => seeded.path()))}
+    ${JSON.stringify(Fiona(seed).array(3, (seeded) => seeded.path()))}
     `}
     />
     <Sample
@@ -31,15 +31,20 @@ const Section = ({ seed }) => (
         inArray: [seeded => seeded.path()]
     })
     `}
-    output={`${
-    JSON.stringify(Fiona(seed).object({
-        path1: seeded => seeded.path(),
-        path2: seeded => seeded.path(),
-        nested: {
-            deeply: seeded => seeded.path()
-        },
-        inArray: [seeded => seeded.path()]
-      }), null, 2)}}`}
+      output={`${
+        JSON.stringify(
+          Fiona(seed).object({
+            path1: (seeded) => seeded.path(),
+            path2: (seeded) => seeded.path(),
+            nested: {
+              deeply: (seeded) => seeded.path(),
+            },
+            inArray: [(seeded) => seeded.path()],
+          }),
+          null,
+          2,
+        )
+      }}`}
     />
     <Sample
       input={`

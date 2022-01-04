@@ -3,11 +3,11 @@ import { ApiSection, consume, Fiona, Sample } from "../../../../../docs/app";
 const Section = ({ seed }) => (
   <span>
     <ApiSection
-      heading={(
+      heading={
         <span>
           <small>Fiona.</small>String
         </span>
-      )}
+      }
     >
       <p>A method to populate stirng literal template with resolved values.</p>
 

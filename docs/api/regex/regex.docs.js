@@ -2,11 +2,11 @@ import { ApiSection, consume, Fiona, Sample } from "../../../docs/app";
 
 const Section = ({ seed }) => (
   <ApiSection
-    heading={(
+    heading={
       <span>
         <small>Fiona.</small>Regex
       </span>
-    )}
+    }
   >
     <p>
       A very general use, seeded utility to generate a string that matches a

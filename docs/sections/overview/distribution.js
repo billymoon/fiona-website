@@ -1,6 +1,6 @@
 // TODO: do we need to include bezier easing library?
-import bezierEasing from 'bezier-easing'
-import { Fiona, consume, Sample } from '../../app'
+import bezierEasing from "bezier-easing";
+import { consume, Fiona, Sample } from "../../app";
 
 const Section = ({ seed }) => (
   <section>
@@ -25,11 +25,12 @@ const Section = ({ seed }) => (
     Fiona(${seed}).array(5, income)
     `}
       output={`
-    ${JSON.stringify(
-      Fiona(seed).array(5, seeded =>
-        seeded.distribution(i => i * i * i).number({ max: 100000 })
-      )
-    )}
+    ${
+        JSON.stringify(
+          Fiona(seed).array(5, (seeded) =>
+            seeded.distribution((i) => i * i * i).number({ max: 100000 })),
+        )
+      }
     `}
     />
 
@@ -51,13 +52,14 @@ const Section = ({ seed }) => (
     Fiona(${seed}).array(5, income)
     `}
       output={`
-    ${JSON.stringify(
-      Fiona(seed).array(5, seeded =>
-        seeded
-          .distribution(bezierEasing(0.5, 0.5, 1, 0))
-          .number({ min: 10000, max: 100000 })
-      )
-    )}
+    ${
+        JSON.stringify(
+          Fiona(seed).array(5, (seeded) =>
+            seeded
+              .distribution(bezierEasing(0.5, 0.5, 1, 0))
+              .number({ min: 10000, max: 100000 })),
+        )
+      }
     `}
     />
 
@@ -75,16 +77,20 @@ const Section = ({ seed }) => (
     Fiona(${seed}).array(5, seeded => seeded.distribution(i => i < 0.4 ? 0.4 : i).number({ max: 100000 })
     `}
       output={`
-    ${JSON.stringify(
-      Fiona(seed).array(5, seeded =>
-        seeded.distribution(i => (i < 0.4 ? 0.4 : i)).number({ max: 100000 })
-      )
-    )}
+    ${
+        JSON.stringify(
+          Fiona(seed).array(5, (seeded) =>
+            seeded.distribution((i) => (i < 0.4
+              ? 0.4
+              : i)
+            ).number({ max: 100000 })),
+        )
+      }
     `}
     />
 
     <div className="clearfix" />
   </section>
-)
+);
 
-export default consume(Section)
+export default consume(Section);

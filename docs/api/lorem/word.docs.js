@@ -2,11 +2,11 @@ import { ApiSection, consume, Fiona, Sample } from "../../../docs/app";
 
 const Section = ({ seed }) => (
   <ApiSection
-    heading={(
+    heading={
       <span>
         <small>Fiona.</small>Word
       </span>
-    )}
+    }
   >
     <p>A seeded utility to return a single word from lorem ipsum text.</p>
 

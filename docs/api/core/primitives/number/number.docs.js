@@ -2,11 +2,11 @@ import { ApiSection, consume, Fiona, Sample } from "../../../../../docs/app";
 
 const Section = ({ seed }) => (
   <ApiSection
-    heading={(
+    heading={
       <span>
         <small>Fiona.</small>Number
       </span>
-    )}
+    }
   >
     <p>
       A seeded utility to return a number, taking options min and max and

@@ -1,12 +1,12 @@
-import { Fiona, consume, Sample, Code } from '../../app'
+import { Code, consume, Fiona, Sample } from "../../app";
 
-const templateStringOutput = seeded =>
+const templateStringOutput = (seeded) =>
   seeded.object({
     fullname: Fiona.Fullname,
     age: Fiona.Number({ max: 100 }),
-    playThing: ({ data }) => (data.age < 5 ? 'cuddly toys' : 'friends'),
-    sentences: Fiona.Array({ min: 1, max: 5 }, Fiona.Sentence, '\n\n    ')
-  })
+    playThing: ({ data }) => (data.age < 5 ? "cuddly toys" : "friends"),
+    sentences: Fiona.Array({ min: 1, max: 5 }, Fiona.Sentence, "\n\n    "),
+  });
 
 const Section = ({ seed }) => (
   <section>
@@ -43,7 +43,9 @@ const Section = ({ seed }) => (
     templateFunction(data)
     `}
       output={`
-    ${(d => `Dear ${d.fullname},
+    ${
+        ((d) =>
+          `Dear ${d.fullname},
 
     I know you are ${d.age} years old, and like playing with ${d.playThing}.
 
@@ -53,11 +55,12 @@ const Section = ({ seed }) => (
 
     Fiona
     x x x
-    `)(templateStringOutput(Fiona(seed)))}`}
+    `)(templateStringOutput(Fiona(seed)))
+      }`}
     />
 
     <div className="clearfix" />
   </section>
-)
+);
 
-export default consume(Section)
+export default consume(Section);

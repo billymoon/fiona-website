@@ -3,11 +3,11 @@ import { ApiSection, consume, Fiona, Sample } from "../../../docs/app";
 // TODO: tell the story about Fiona.Random in docs
 const Section = ({ seed }) => (
   <ApiSection
-    heading={(
+    heading={
       <span>
         <small>Fiona.</small>Random
       </span>
-    )}
+    }
   >
     <p>
       Seeded version of native <code>Math.random</code> method.

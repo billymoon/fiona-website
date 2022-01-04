@@ -1,7 +1,7 @@
-import { Layout, Article } from '../../../docs/app'
-import { provide } from '../../../docs/app/state'
+import { Article, Layout } from "../../../docs/app";
+import { provide } from "../../../docs/app/state";
 
-import { ExamplesImagePlaceholders } from '../../../docs/sections'
+import { ExamplesImagePlaceholders } from "../../../docs/sections";
 
 const Page = () => (
   <Layout>
@@ -12,6 +12,6 @@ const Page = () => (
       <ExamplesImagePlaceholders />
     </Article>
   </Layout>
-)
+);
 
-export default provide(Page)
+export default provide(Page);

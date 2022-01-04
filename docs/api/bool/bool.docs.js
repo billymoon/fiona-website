@@ -2,11 +2,11 @@ import { ApiSection, consume, Fiona, Sample } from "../../../docs/app";
 
 const Section = ({ seed }) => (
   <ApiSection
-    heading={(
+    heading={
       <span>
         <small>Fiona.</small>Bool
       </span>
-    )}
+    }
   >
     <p>
       A seeded utility to return true or false. Takes `chance` option to change

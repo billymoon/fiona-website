@@ -12,11 +12,11 @@ Fiona.register(["person", person], ["luckyNumber", Fiona.Number({ max: 10 })]);
 
 const Section = ({ seed }) => (
   <ApiSection
-    heading={(
+    heading={
       <span>
         <small>Fiona.</small>register
       </span>
-    )}
+    }
   >
     <p>
       A utility for extending Fiona with custom methods, either as a one off, or

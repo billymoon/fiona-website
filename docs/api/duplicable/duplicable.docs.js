@@ -2,11 +2,11 @@ import { ApiSection, consume, Fiona, Sample } from "../../../docs/app";
 
 const Section = ({ seed }) => (
   <ApiSection
-    heading={(
+    heading={
       <span>
         <small>Fiona.</small>Duplicable
       </span>
-    )}
+    }
   >
     <p>
       A seeded utility to help to produce duplicated data sometimes. By default,

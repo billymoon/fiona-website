@@ -1,11 +1,11 @@
-import Link from 'next/link'
-import { withRouter } from 'next/router'
+import Link from "next/link";
+import { withRouter } from "next/router";
 
-import { withTheme, config, withNav } from '../app'
+import { config, withNav, withTheme } from "../app";
 
-const radius = 6
-const underline = 3
-const underlinePressed = 1
+const radius = 6;
+const underline = 3;
+const underlinePressed = 1;
 
 const Menu = ({ closed }) => (
   <div className="menu">
@@ -13,7 +13,8 @@ const Menu = ({ closed }) => (
       <div className="line top" />
       <div className="line bottom" />
     </div>
-    <style jsx>{`
+    <style jsx>
+      {`
       .menu {
         display: flex;
         width: 40px;
@@ -54,33 +55,39 @@ const Menu = ({ closed }) => (
 
       .line.top {
         background-color: #d24188;
-        transform: ${closed
+        transform: ${
+        closed
           ? `translateY(-4px) rotate(0deg)`
-          : `translateY(2px) rotate(45deg)`};
+          : `translateY(2px) rotate(45deg)`
+      };
       }
 
       .line.bottom {
         background-color: #5056a9;
-        transform: ${closed
+        transform: ${
+        closed
           ? `translateY(4px) rotate(0deg)`
-          : `translateY(0px) rotate(-45deg)`};
+          : `translateY(0px) rotate(-45deg)`
+      };
       }
-    `}</style>
+    `}
+    </style>
   </div>
-)
+);
 
 const ButtonLink = withTheme(({ href, selected, label, theme, ...props }) => (
   <div>
     <Link href={href}>
       <a
-        className={['action-button']
-          .concat(selected ? ['selected'] : [])
-          .join(' ')}
+        className={["action-button"]
+          .concat(selected ? ["selected"] : [])
+          .join(" ")}
       >
         {label}
       </a>
     </Link>
-    <style jsx>{`
+    <style jsx>
+      {`
       .animate {
         transition: all 0.05s;
         -webkit-transition: all 0.05s;
@@ -134,19 +141,20 @@ const ButtonLink = withTheme(({ href, selected, label, theme, ...props }) => (
           margin-top: 0px;
         }
       }
-    `}</style>
+    `}
+    </style>
   </div>
-))
+));
 
-const getHeading = pathname => {
-  if (pathname === '/') {
-    return 'Overview'
+const getHeading = (pathname) => {
+  if (pathname === "/") {
+    return "Overview";
   } else if (pathname.match(/^\/api(\/|$)/)) {
-    return 'API'
+    return "API";
   } else if (pathname.match(/^\/examples(\/|$)/)) {
-    return 'Examples'
+    return "Examples";
   }
-}
+};
 
 // TODO: simpify and tidy this section, perhaps this whole nav file
 const Nav = ({ router, closed, toggleNav }) => (
@@ -155,9 +163,9 @@ const Nav = ({ router, closed, toggleNav }) => (
       <h4 style={{ margin: 0 }}>{getHeading(router.pathname)}</h4>
       <a
         href="#"
-        onClick={evt => {
-          evt.preventDefault()
-          toggleNav(!closed)
+        onClick={(evt) => {
+          evt.preventDefault();
+          toggleNav(!closed);
         }}
       >
         <Menu closed={closed} />
@@ -166,7 +174,7 @@ const Nav = ({ router, closed, toggleNav }) => (
     <div className="menu-items">
       <ButtonLink
         label="Overview"
-        selected={router.pathname === '/'}
+        selected={router.pathname === "/"}
         href="/"
       />
       <ButtonLink
@@ -183,9 +191,10 @@ const Nav = ({ router, closed, toggleNav }) => (
     <div className="heading-container">
       <h2 style={{ margin: 0 }}>{getHeading(router.pathname)}</h2>
     </div>
-    <style jsx>{`
+    <style jsx>
+      {`
       .menu-items {
-        display: ${closed ? 'none' : 'block'};
+        display: ${closed ? "none" : "block"};
       }
 
       .menu-toggle {
@@ -212,8 +221,9 @@ const Nav = ({ router, closed, toggleNav }) => (
           display: none;
         }
       }
-    `}</style>
+    `}
+    </style>
   </div>
-)
+);
 
-export default withRouter(withNav(Nav))
+export default withRouter(withNav(Nav));

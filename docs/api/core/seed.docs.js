@@ -2,11 +2,11 @@ import { ApiSection, consume, Fiona, Sample } from "../../../docs/app";
 
 const Section = ({ seed }) => (
   <ApiSection
-    heading={(
+    heading={
       <span>
         <small>Fiona.</small>Seed
       </span>
-    )}
+    }
   >
     <p>
       Method that returns the <code>initseed</code> of the seeded instance.

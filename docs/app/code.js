@@ -1,9 +1,10 @@
-import Head from 'next/head'
-import Highlight from 'react-highlight/lib/optimized'
+import Head from "next/head";
+import Highlight from "react-highlight/lib/optimized";
 
-const Code = ({ bgColor = '#fff6f8', special = [], lang, children }) => (
-  <div className={special.concat(['f5', 'editor']).join(' ')}>
-    <style jsx>{`
+const Code = ({ bgColor = "#fff6f8", special = [], lang, children }) => (
+  <div className={special.concat(["f5", "editor"]).join(" ")}>
+    <style jsx>
+      {`
       .editor {
         background-color: ${bgColor};
         background: linear-gradient(
@@ -18,8 +19,10 @@ const Code = ({ bgColor = '#fff6f8', special = [], lang, children }) => (
       .mobile-no-bg {
         background: none;
       }
-    `}</style>
-    <style global jsx>{`
+    `}
+    </style>
+    <style global jsx>
+      {`
       .editor pre {
         margin: 0;
         white-space: pre-wrap;
@@ -51,20 +54,23 @@ const Code = ({ bgColor = '#fff6f8', special = [], lang, children }) => (
           font-size: 18px;
         }
       }
-    `}</style>
-    {lang === 'none' ? (
-      <pre className="hljs">
-        <code>{children}</code>
-      </pre>
-    ) : (
-      <Highlight
-        className={lang || 'javascript'}
-        languages={['json', 'xml', 'javascript']}
-      >
-        {children}
-      </Highlight>
-    )}
+    `}
+    </style>
+    {lang === "none"
+      ? (
+        <pre className="hljs">
+          <code>{children}</code>
+        </pre>
+      )
+      : (
+        <Highlight
+          className={lang || "javascript"}
+          languages={["json", "xml", "javascript"]}
+        >
+          {children}
+        </Highlight>
+      )}
   </div>
-)
+);
 
-export default Code
+export default Code;

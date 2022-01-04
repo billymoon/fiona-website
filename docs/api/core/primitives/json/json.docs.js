@@ -3,11 +3,11 @@ import { ApiSection, consume, Fiona, Sample } from "../../../../../docs/app";
 const Section = ({ seed }) => (
   <span>
     <ApiSection
-      heading={(
+      heading={
         <span>
           <small>Fiona.</small>Json
         </span>
-      )}
+      }
     >
       <p>A method to return current data object as json string.</p>
 

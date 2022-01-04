@@ -1,10 +1,10 @@
-import { Layout, Article } from '../../../docs/app'
-import { provide } from '../../../docs/app/state'
+import { Article, Layout } from "../../../docs/app";
+import { provide } from "../../../docs/app/state";
 
 import {
+  ExamplesTemplatePlugin,
   ExamplesTemplateString,
-  ExamplesTemplatePlugin
-} from '../../../docs/sections'
+} from "../../../docs/sections";
 
 const Page = () => (
   <Layout>
@@ -18,6 +18,6 @@ const Page = () => (
       <ExamplesTemplatePlugin />
     </Article>
   </Layout>
-)
+);
 
-export default provide(Page)
+export default provide(Page);

@@ -1,14 +1,15 @@
-import { withApi, withThemeState } from '../../app/state'
+import { withApi, withThemeState } from "../../app/state";
 
 const ApiSearch = ({ setApiFilter, apiFilter, theme, ...props }) => (
   <div>
     <input
-      ref={el => el && el.focus()}
+      ref={(el) => el && el.focus()}
       value={apiFilter}
       placeholder="filter api methods"
-      onChange={evt => setApiFilter(evt.target.value)}
+      onChange={(evt) => setApiFilter(evt.target.value)}
     />
-    <style jsx>{`
+    <style jsx>
+      {`
       input {
         border: 3px solid ${theme.clr.secondaryAccent};
         width: 100%;
@@ -24,8 +25,9 @@ const ApiSearch = ({ setApiFilter, apiFilter, theme, ...props }) => (
           width: 240px;
         }
       }
-    `}</style>
+    `}
+    </style>
   </div>
-)
+);
 
-export default withApi(withThemeState(ApiSearch))
+export default withApi(withThemeState(ApiSearch));

@@ -2,11 +2,11 @@ import { ApiSection, consume, Fiona, Sample } from "../../../docs/app";
 
 const Section = ({ seed }) => (
   <ApiSection
-    heading={(
+    heading={
       <span>
         <small>Fiona.</small>Lorem
       </span>
-    )}
+    }
   >
     <p>
       A seeded utility to return lorem ipsum text, optionally takes `qty` which

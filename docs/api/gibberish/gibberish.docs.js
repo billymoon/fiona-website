@@ -2,14 +2,15 @@ import { ApiSection, consume, Fiona, Sample } from "../../../docs/app";
 
 const Section = ({ seed }) => (
   <ApiSection
-    heading={(
+    heading={
       <span>
         <small>Fiona.</small>Gibberish
       </span>
-    )}
+    }
   >
     <p>
-    A seeded utility to return gibberish text, optionally takes `qty` which is the number of words which defaults to `1`.
+      A seeded utility to return gibberish text, optionally takes `qty` which is
+      the number of words which defaults to `1`.
     </p>
 
     <Sample
@@ -18,23 +19,24 @@ const Section = ({ seed }) => (
         `}
       output={`\n${
         JSON.stringify(
-          Fiona(seed).gibberish()
+          Fiona(seed).gibberish(),
         )
       }`}
-    />    
+    />
     <Sample
       input={`
         Fiona(${seed}).gibberish({ qty: 20 })
         `}
       output={`\n${
         JSON.stringify(
-          Fiona(seed).gibberish({ qty: 20 })
+          Fiona(seed).gibberish({ qty: 20 }),
         )
       }`}
     />
 
     <p>
-    By setting <code>syllableMin</code> and <code>syllableMax</code> properties, the word length can be influenced.
+      By setting <code>syllableMin</code> and <code>syllableMax</code>{" "}
+      properties, the word length can be influenced.
     </p>
 
     <Sample
@@ -43,7 +45,7 @@ const Section = ({ seed }) => (
         `}
       output={`\n${
         JSON.stringify(
-          Fiona(seed).gibberish({ qty: 20, syllableMin: 1, syllableMax: 2 })
+          Fiona(seed).gibberish({ qty: 20, syllableMin: 1, syllableMax: 2 }),
         )
       }`}
     />
@@ -54,7 +56,7 @@ const Section = ({ seed }) => (
         `}
       output={`\n${
         JSON.stringify(
-          Fiona(seed).gibberish({ qty: 20, syllableMin: 8, syllableMax: 12 })
+          Fiona(seed).gibberish({ qty: 20, syllableMin: 8, syllableMax: 12 }),
         )
       }`}
     />
@@ -65,7 +67,7 @@ const Section = ({ seed }) => (
         `}
       output={`\n${
         JSON.stringify(
-          Fiona(seed).gibberish({ qty: 20, syllableMin: 1, syllableMax: 6 })
+          Fiona(seed).gibberish({ qty: 20, syllableMin: 1, syllableMax: 6 }),
         )
       }`}
     />

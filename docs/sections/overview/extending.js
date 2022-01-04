@@ -1,4 +1,4 @@
-import { Fiona, consume, Sample } from '../../app'
+import { consume, Fiona, Sample } from "../../app";
 
 const Section = ({ seed }) => (
   <section>
@@ -23,15 +23,17 @@ const Section = ({ seed }) => (
 
     Fiona(${seed}).object({ name: Fiona.Fullname, income })
     `}
-      output={`${JSON.stringify(
-        Fiona(seed).object({
-          name: Fiona.Fullname,
-          income: seeded =>
-            seeded.distribution(i => i * i * i).number({ max: 1000000 })
-        }),
-        null,
-        2
-      )}`}
+      output={`${
+        JSON.stringify(
+          Fiona(seed).object({
+            name: Fiona.Fullname,
+            income: (seeded) =>
+              seeded.distribution((i) => i * i * i).number({ max: 1000000 }),
+          }),
+          null,
+          2,
+        )
+      }`}
     />
 
     <p>Use the `register` method to add your function as a method in Fiona.</p>
@@ -45,9 +47,11 @@ const Section = ({ seed }) => (
       output={`
 
 
-    ${Fiona(seed)
-      .distribution(i => i * i * i)
-      .number({ max: 1000000 })}
+    ${
+        Fiona(seed)
+          .distribution((i) => i * i * i)
+          .number({ max: 1000000 })
+      }
     `}
     />
 
@@ -85,15 +89,19 @@ const Section = ({ seed }) => (
     })
     `}
       output={`
-    ${Fiona(seed).json({
-      threeNumbers: Fiona.Choose(3, [1, 2, 3, 4, 5, 6, 7, 8, 9])
-    })}
-    ${Fiona(seed).json({
-      threeNumbers: Fiona.Choose(3, [1, 2, 3, 4, 5, 6, 7, 8, 9])
-    })}
+    ${
+        Fiona(seed).json({
+          threeNumbers: Fiona.Choose(3, [1, 2, 3, 4, 5, 6, 7, 8, 9]),
+        })
+      }
+    ${
+        Fiona(seed).json({
+          threeNumbers: Fiona.Choose(3, [1, 2, 3, 4, 5, 6, 7, 8, 9]),
+        })
+      }
     `}
     />
   </section>
-)
+);
 
-export default consume(Section)
+export default consume(Section);

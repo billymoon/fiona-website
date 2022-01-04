@@ -1,31 +1,31 @@
-import Link from 'next/link'
+import Link from "next/link";
 
-import { Fiona, consume, Sample } from '../../app'
+import { consume, Fiona, Sample } from "../../app";
 
 const NPM = ({ name }) => (
   <Link href={`https://www.npmjs.com/package/${name}`}>
     <a>{name}</a>
   </Link>
-)
+);
 
 const Section = ({ seed }) => (
   <section>
     <h2>Contributing</h2>
 
     <p>
-      Fiona aims to be performant, robust, well documented,{' '}
+      Fiona aims to be performant, robust, well documented,{" "}
       <Link href="/static/dependency-graph.svg">
         <a>well organised</a>
       </Link>
-      ,{' '}
+      ,{" "}
       <Link href="/static/reports/coverage/index.html">
         <a>well tested</a>
-      </Link>{' '}
+      </Link>{" "}
       and small (~10KB gzipped).
     </p>
 
     <p>
-      Fiona is open source,{' '}
+      Fiona is open source,{" "}
       <Link href="https://github.com/billymoon/Fiona">
         <a>fork me on github</a>
       </Link>
@@ -41,15 +41,17 @@ const Section = ({ seed }) => (
     </p>
 
     <p>
-      Whilst there are very few dependencies (only <NPM name="randexp" />) in
-      the Fiona library, there are several used to aid development:
+      Whilst there are very few dependencies (only{" "}
+      <NPM name="randexp" />) in the Fiona library, there are several used to
+      aid development:
     </p>
 
     <ul>
       <li>
         <Link href="https://deno.land">
           <a>deno</a>
-        </Link> for developing, linting, testing and bundling
+        </Link>{" "}
+        for developing, linting, testing and bundling
       </li>
       <li>
         <NPM name="react" /> and <NPM name="next" /> for documentation website
@@ -57,11 +59,11 @@ const Section = ({ seed }) => (
     </ul>
 
     <p>
-      Updating or creating a pull request will trigger a deployment using vercel's
-      now service, so you can preview the suggested changes in a production like
-      environment.
+      Updating or creating a pull request will trigger a deployment using
+      vercel's now service, so you can preview the suggested changes in a
+      production like environment.
     </p>
   </section>
-)
+);
 
-export default consume(Section)
+export default consume(Section);

@@ -2,11 +2,11 @@ import { ApiSection, consume, Fiona, Sample } from "../../../docs/app";
 
 const Section = ({ seed }) => (
   <ApiSection
-    heading={(
+    heading={
       <span>
         <small>Fiona.</small>Date
       </span>
-    )}
+    }
   >
     <p>
       A seeded utility to return a date as a string in format `YYYY-MM-DD`.

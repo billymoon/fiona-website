@@ -2,11 +2,11 @@ import { ApiSection, consume, Fiona, Sample } from "../../../docs/app";
 
 const Section = ({ seed }) => (
   <ApiSection
-    heading={(
+    heading={
       <span>
         <small>Fiona.</small>Choose
       </span>
-    )}
+    }
   >
     <p>
       A seeded weighted method to select a specified number of items from a

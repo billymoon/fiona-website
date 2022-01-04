@@ -4,11 +4,11 @@ import { ApiSection, consume, Fiona, Sample } from "../../../docs/app";
 
 const Section = ({ seed }) => (
   <ApiSection
-    heading={(
+    heading={
       <span>
         <small>Fiona.</small>Shuffle
       </span>
-    )}
+    }
   >
     <p>
       A seeded utility to shuffle passed array, without modifying the original
