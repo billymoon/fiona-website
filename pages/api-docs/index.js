@@ -10,6 +10,9 @@ import ApiFnGender from '../../docs/api/name/gender.docs'
 import ApiFnNamedata from '../../docs/api/name/namedata.docs'
 import ApiFnFullname from '../../docs/api/name/fullname.docs'
 import ApiFnInfo from '../../docs/api/core/info.docs'
+import ApiFnSeed from '../../docs/api/core/seed.docs'
+import ApiFnIndex from '../../docs/api/core/index.docs'
+import ApiFnPath from '../../docs/api/core/path.docs'
 import ApiFnSurname from '../../docs/api/name/surname.docs'
 import ApiFnNumber from '../../docs/api/core/primitives/number/number.docs'
 import ApiFnObject from '../../docs/api/core/primitives/object/object.docs'
@@ -70,6 +73,9 @@ const Page = () => (
           <ApiFnSurname />
           <ApiFnFullname />
           <ApiFnInfo />
+          <ApiFnSeed />
+          <ApiFnIndex />
+          <ApiFnPath />
           <ApiFnRegister />
           <ApiFnObject />
           <ApiFnString />

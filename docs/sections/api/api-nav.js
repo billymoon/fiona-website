@@ -33,6 +33,9 @@ const apis = [
   'Fiona.Img',
 
   'Fiona.Info',
+  'Fiona.Seed',
+  'Fiona.Index',
+  'Fiona.Path',
   'Fiona.Duplicable',
   'Fiona.Distribution',
   'Fiona.register'
