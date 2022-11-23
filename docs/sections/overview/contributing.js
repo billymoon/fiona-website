@@ -4,7 +4,7 @@ import { consume, Fiona, Sample } from "../../app";
 
 const NPM = ({ name }) => (
   <Link href={`https://www.npmjs.com/package/${name}`}>
-    <a>{name}</a>
+    {name}
   </Link>
 );
 
@@ -15,11 +15,11 @@ const Section = ({ seed }) => (
     <p>
       Fiona aims to be performant, robust, well documented,{" "}
       <Link href="/static/dependency-graph.svg">
-        <a>well organised</a>
+        well organised
       </Link>
       ,{" "}
       <Link href="/static/reports/coverage/index.html">
-        <a>well tested</a>
+        well tested
       </Link>{" "}
       and small (~10KB gzipped).
     </p>
@@ -27,7 +27,7 @@ const Section = ({ seed }) => (
     <p>
       Fiona is open source,{" "}
       <Link href="https://github.com/billymoon/Fiona">
-        <a>fork me on github</a>
+        fork me on github
       </Link>
       . Pull requests and issues welcome. The most useful thing the community
       could contribute to this project at this time is to help build up the
@@ -49,7 +49,7 @@ const Section = ({ seed }) => (
     <ul>
       <li>
         <Link href="https://deno.land">
-          <a>deno</a>
+          deno
         </Link>{" "}
         for developing, linting, testing and bundling
       </li>

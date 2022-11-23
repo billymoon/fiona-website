@@ -77,7 +77,7 @@ const Menu = ({ closed }) => (
 
 const ButtonLink = withTheme(({ href, selected, label, theme, ...props }) => (
   <div>
-    <Link href={href}>
+    <Link href={href} legacyBehavior>
       <a
         className={["action-button"]
           .concat(selected ? ["selected"] : [])

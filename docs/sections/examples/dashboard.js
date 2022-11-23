@@ -4,7 +4,7 @@ import { Article, Fiona, Layout, Shelf, withTheme } from "../../app";
 const Showcase = ({ children, title, href, img }) => (
   <div>
     <h3>{title}</h3>
-    <Link href={href}>
+    <Link href={href} legacyBehavior>
       <a>
         <div className="img-wrapper">
           <img src={img} alt="" />
@@ -12,7 +12,7 @@ const Showcase = ({ children, title, href, img }) => (
       </a>
     </Link>
     {children}
-    <Link href={href}>
+    <Link href={href} legacyBehavior>
       <a>{title} demo and code samples</a>
     </Link>
     <style jsx>

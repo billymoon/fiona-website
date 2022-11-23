@@ -98,7 +98,7 @@ const Section = ({ seed }) => (
       There are lots of methods to help generate different types of data, you
       can read more about them in the{" "}
       <Link href="/api">
-        <a>api section</a>
+        api section
       </Link>
       . These methods can be called on an instance to return a value, or on
       `Fiona` itself to return a higher order function that when called with an
