@@ -57,7 +57,7 @@ const transformer = recurser(node=>node.fiona, node=>{
 
 Fiona.register(['fromJSON', (seeded, json) => {
     try {
-        json = JSON.parse(json)        
+        json = JSON.parse(json)
     } catch (err) {
         if (err.name !== 'SyntaxError') {
             throw Error(err)
